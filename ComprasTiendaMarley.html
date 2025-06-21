@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda Marley</title>
+    <link rel="stylesheet" href="./styles/styles.css">
+    <script>
+        document.getElementById("botonCompra").addEventListener("click", function() {
+        const nombre = document.getElementById("nombreUsuario").value.trim();
+        const apellidos = document.getElementById("apellidosUsuario").value.trim();
+        localStorage.setItem("nombreUsuario", nombre);
+        localStorage.setItem("apellidosUsuario", apellidos);
+        });
+        </script>
+</head>
+<body class="bodyMarley">
+    <div>
+        <h1 class="noWait">No Wait</h1>
+        <div class="logoMasCompras">
+            <a href="./Index.html">
+                <img class="logoMarley2" src="./styles/Imagenes/d833f3d7dee4aaf1d6e8609ae57a265fff461767.jpg" alt="logoMarley">
+            </a>
+            <h1>De compras</h1>
+            <div class="imgcarrito">
+                <section id="carrito" class="imagenCarrito">
+                    <span class="back" onclick="verStock"></span>
+                    <button id="cartBtn">
+                        <img class="cartImg" src="./styles/Imagenes/Carrito de compras 2.png" alt="Imgcart">
+                    </button>
+                </section>
+
+                
+                <div id="modal_carrito" class="modal">
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <p>Usted lleva:</p>
+                        <ul id="cartItems" class="cartList"></ul>
+
+                        
+                        <button id="joinQueueBtn" class="btn">Unirse a la fila virtual</button>
+                        <p id="queueStatus"></p>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="separador">
+        </div>
+
+        <div class="imagenesStock">
+            <div>
+                <h3 class="stockMarley">Stock</h3>
+            </div>
+
+            <button id="doblonBtn">
+                <img class="imgDoblon" src="./styles/Imagenes/Doblon.webp" alt="Doblon">
+            </button>
+            <div id="modal_doblon" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h1>Doblon</h1>
+                    <p><strong>Precio: </strong>$350</p>
+                    <p><strong>Disponibles: </strong>15</p>
+                    <label for="doblonQty">Cantidad:</label>
+                    <input type="number" id="doblonQty" min="1" max="15" value="1" style="width:60px;">
+                    <button class="btn" id="addToCartBtn">Añadir al carrito</button>
+                </div>
+            </div>
+
+            <button id="monsterBtn">
+                <img class="imgMonsterNormal" src="./styles/Imagenes/Monster+Energy normal.png" alt="MonsterNormal">
+            </button>
+            <div id="modal_monster" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h1>Monster Energy</h1>
+                    <p><strong>Precio: </strong>$1800</p>
+                    <p><strong>Disponibles: </strong>10</p>
+                    <label for="monsterQty">Cantidad:</label>
+                    <input type="number" id="monsterQty" min="1" max="10" value="1" style="width:60px;">
+                    <button class="btn" id="addMonsterToCartBtn">Añadir al carrito</button>
+                </div>
+            </div>
+
+
+            <img class="imgCocaCola" src="./styles/Imagenes/Cocacola 350cc botella.jpg" alt="CocaCola350cc">
+        </div>
+
+        <script src="./Modal.js"></script>
+    </div>
+</body>
+</html>
